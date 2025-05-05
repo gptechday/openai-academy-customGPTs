@@ -1,0 +1,74 @@
+
+openapi: 3.0.0
+info:
+  title: Official Joke API
+  version: 1.0.0
+  description: A simple API for random and categorized jokes.
+
+servers:
+  - url: https://official-joke-api.appspot.com
+
+paths:
+  /random_joke:
+    get:
+      summary: Get a random joke
+      operationId: getRandomJoke
+      responses:
+        '200':
+          description: A single random joke
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Joke'
+
+  /jokes/programming/random:
+    get:
+      summary: Get a random programming joke
+      operationId: getRandomProgrammingJoke
+      responses:
+        '200':
+          description: A single random programming joke
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Joke'
+
+  /jokes/general/random:
+    get:
+      summary: Get a random general joke
+      operationId: getRandomGeneralJoke
+      responses:
+        '200':
+          description: A single random general joke
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Joke'
+
+  /jokes/ten:
+    get:
+      summary: Get ten random jokes
+      operationId: getTenRandomJokes
+      responses:
+        '200':
+          description: An array of jokes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Joke'
+
+components:
+  schemas:
+    Joke:
+      type: object
+      properties:
+        id:
+          type: integer
+        type:
+          type: string
+        setup:
+          type: string
+        punchline:
+          type: string
