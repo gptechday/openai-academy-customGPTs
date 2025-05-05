@@ -1,0 +1,69 @@
+openapi: 3.1.0
+info:
+  title: Crossref Mini API for CiteRight
+  version: 1.0.1
+  description: Minimal subset of Crossref REST API used by CiteRight GPT.
+servers:
+- url: https://api.crossref.org
+paths:
+  /works/{id}:
+    get:
+      operationId: lookup_by_id
+      summary: Retrieve metadata for a single DOI or URL.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Exact DOI (e.g., 10.1038/nphys1170) or canonical URL
+      responses:
+        '200':
+          description: Successful lookup
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CrossrefResponse'
+        '404':
+          description: Not found
+  /works:
+    get:
+      operationId: search_by_title
+      summary: Search works by free-text query.
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Full title or keywords
+      - name: rows
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 3
+          minimum: 1
+          maximum: 5
+        description: Number of results
+      responses:
+        '200':
+          description: Successful search
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CrossrefResponse'
+components:
+  schemas:
+    CrossrefResponse:
+      type: object
+      description: Partial Crossref API response wrapper.
+      properties:
+        status:
+          type: string
+        message-type:
+          type: string
+        message:
+          type: object
+      required:
+      - message
