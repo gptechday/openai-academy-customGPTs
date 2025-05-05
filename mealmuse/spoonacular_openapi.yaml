@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Spoonacular Mini API for MealMuse
+  version: 1.0.1
+servers:
+  - url: https://api.spoonacular.com
+
+paths:
+  /recipes/complexSearch:
+    get:
+      operationId: search_recipes
+      summary: Search recipes by query, diet, and intolerances.
+      parameters:
+        - name: query
+          in: query
+          schema: { type: string }
+          description: Full title or keywords
+        - name: diet
+          in: query
+          schema: { type: string }
+        - name: intolerances
+          in: query
+          schema: { type: string }
+        - name: number
+          in: query
+          schema: { type: integer, default: 5, maximum: 10 }
+        - name: addRecipeNutrition
+          in: query
+          schema: { type: boolean, default: true }
+      responses:
+        "200":
+          description: Recipe search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        "400":
+          description: Invalid parameters
+  /recipes/{id}/information:
+    get:
+      operationId: recipe_info
+      summary: Get detailed nutrition info for a recipe.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+        - name: includeNutrition
+          in: query
+          schema: { type: boolean, default: true }
+      responses:
+        "200":
+          description: Detailed recipe info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecipeInfo'
+        "404":
+          description: Recipe not found
+
+components:
+  schemas:
+    # -- Minimal search result wrapper ----------------------------
+    SearchResponse:
+      type: object
+      description: Spoonacular search wrapper
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecipeSummary'
+        totalResults:
+          type: integer
+      required: [results]
+
+    RecipeSummary:
+      type: object
+      description: Lightweight recipe object returned by complexSearch
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        nutrition: { type: object }
+      required: [id, title]
+
+    # -- Detailed recipe info -------------------------------------
+    RecipeInfo:
+      type: object
+      description: Full recipe record with nutrition data
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        nutrition:
+          type: object
+          properties:
+            nutrients:
+              type: array
+              items: { type: object }
+        extendedIngredients:
+          type: array
+          items: { type: object }
+      required: [id, title, nutrition]
