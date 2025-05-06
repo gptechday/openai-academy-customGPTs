@@ -16,13 +16,13 @@
 
 ## 2  Security & guardrails 🌐  
 
-| Resource | Focus area | Slide usage |
+| Resource | Focus area | Usage |
 |----------|------------|-------------|
-| [**OWASP Top 10 for LLM Apps (2025)**](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | Critical LLM risks | Add Top‑10 table & mitigation map |
-| [**Guardrails‑AI**](https://github.com/guardrails-ai/guardrails) | Validate & censor LLM I/O | Live demo: attach a PII validator |
-| [**Rebuff**](https://github.com/rebuff/rebuff) | Prompt‑injection detection | “Plug‑and‑play” self‑hardening wrapper |
-| [**OWASP LLM cheat‑sheet (PDF)**](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/OWASP-LLM-Top10-Cheat-Sheet.pdf) | One‑page mitigations | Hand‑out / appendix |
-| [**DeepSeek jailbreak case‑study – WIRED**](https://www.wired.com/story/chatgpt-deepseek-jailbreak/) | Real‑world failure | Red‑teaming anecdote |
+| [**OWASP Top 10 for LLM Apps (2025)**](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | Critical LLM risks | Top‑10 table & mitigation map |
+| [**Guardrails‑AI**](https://github.com/guardrails-ai/guardrails) | Validate & censor LLM I/O | Example PII validator |
+| [**Rebuff**](https://github.com/protectai/rebuff) | Prompt‑injection detection | “Plug‑and‑play” self‑hardening wrapper |
+| [**OWASP LLM cheat‑sheet (PDF)**](https://genai.owasp.org/resource/ai-security-solution-cheat-sheet-q1-2025/) | One‑page mitigations | Security best practices |
+| [**DeepSeek jailbreak case‑study – WIRED**](https://www.wired.com/story/deepseeks-ai-jailbreak-prompt-injection-attacks/) | Real‑world failure | Red‑teaming anecdote |
 
 ---
 
