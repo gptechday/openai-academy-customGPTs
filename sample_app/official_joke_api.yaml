@@ -1,9 +1,8 @@
-
-openapi: 3.0.0
+openapi: 3.1.0
 info:
   title: Official Joke API
-  version: 1.0.0
-  description: A simple API for random and categorized jokes.
+  version: "1.0.0"
+  description: A simple API for random and categorised jokes.
 
 servers:
   - url: https://official-joke-api.appspot.com
@@ -11,53 +10,57 @@ servers:
 paths:
   /random_joke:
     get:
-      summary: Get a random joke
+      summary: Get one random joke
       operationId: getRandomJoke
       responses:
-        '200':
-          description: A single random joke
+        "200":
+          description: One joke object
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Joke'
+                $ref: "#/components/schemas/Joke"
 
   /jokes/programming/random:
     get:
       summary: Get a random programming joke
       operationId: getRandomProgrammingJoke
       responses:
-        '200':
-          description: A single random programming joke
+        "200":
+          description: Array with one programming joke
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Joke'
+                type: array
+                items:
+                  $ref: "#/components/schemas/Joke"
 
   /jokes/general/random:
     get:
       summary: Get a random general joke
       operationId: getRandomGeneralJoke
       responses:
-        '200':
-          description: A single random general joke
+        "200":
+          description: Array with one general joke
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Joke'
+                type: array
+                items:
+                  $ref: "#/components/schemas/Joke"
 
   /jokes/ten:
     get:
       summary: Get ten random jokes
       operationId: getTenRandomJokes
       responses:
-        '200':
-          description: An array of jokes
+        "200":
+          description: Array of ten jokes
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Joke'
+                  $ref: "#/components/schemas/Joke"
 
 components:
   schemas:
@@ -72,3 +75,4 @@ components:
           type: string
         punchline:
           type: string
+      required: [id, type, setup, punchline]
