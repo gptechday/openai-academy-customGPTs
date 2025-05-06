@@ -1,0 +1,162 @@
+openapi: 3.1.0
+info:
+  title: RouteSmart Actions
+  version: 1.1.0
+servers:
+- url: https://www.googleapis.com
+- url: https://routes.googleapis.com
+- url: https://maps.googleapis.com
+- url: https://SMS-SENDER_ENDPOINT
+paths:
+  /calendar/v3/calendars/primary/events:
+    get:
+      operationId: list_events
+      summary: List Google Calendar events
+      parameters:
+      - name: timeMin
+        in: query
+        schema:
+          type: string
+      - name: timeMax
+        in: query
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+          default: 10
+      - name: singleEvents
+        in: query
+        schema:
+          type: boolean
+          default: true
+      responses:
+        '200':
+          description: Events list
+  /routes/v1/directions:computeRoutes:
+    post:
+      operationId: compute_routes
+      summary: "Traffic\u2011aware single\u2011origin route"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                origin:
+                  type: object
+                destination:
+                  type: object
+                travelMode:
+                  type: string
+                  default: DRIVE
+                routingPreference:
+                  type: string
+                  default: TRAFFIC_AWARE
+              required:
+              - origin
+              - destination
+      responses:
+        '200':
+          description: Routes result
+  /routes/v1/routeoptimization:optimize:
+    post:
+      operationId: route_optimization
+      summary: "Optimise multi\u2011stop route order"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Optimised route
+  /maps/api/place/autocomplete/json:
+    get:
+      operationId: place_autocomplete
+      summary: Autocomplete place text
+      parameters:
+      - name: input
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: types
+        in: query
+        schema:
+          type: string
+          default: address
+      responses:
+        '200':
+          description: Autocomplete predictions
+  /maps/api/directions/json:
+    get:
+      operationId: route_plan
+      summary: Legacy Directions API fallback
+      parameters:
+      - name: origin
+        in: query
+        schema:
+          type: string
+      - name: destination
+        in: query
+        schema:
+          type: string
+      - name: waypoints
+        in: query
+        schema:
+          type: string
+      - name: departure_time
+        in: query
+        schema:
+          type: string
+          default: now
+      responses:
+        '200':
+          description: Directions
+  /sendsms:
+    post:
+      operationId: send_sms
+      summary: Send ETA text via custom GCP function
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                receiver:
+                  type: string
+                token:
+                  type: string
+                message:
+                  type: string
+              required:
+              - receiver
+              - token
+              - message
+      responses:
+        '200':
+          description: SMS sent
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: Bearer
+      description: Google OAuth
+    gmaps_key:
+      type: apiKey
+      in: query
+      name: key
+      description: Google Maps API key
+    sms_token:
+      type: apiKey
+      in: header
+      name: token
+      description: Custom SMS auth token
+security:
+- bearer: []
+- gmaps_key: []
