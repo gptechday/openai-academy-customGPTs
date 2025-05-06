@@ -2,7 +2,7 @@
 _Last updated: May 05, 2025_
 
 Thank you for using **MealMuse** (“the Service”).  This policy explains how **Muntaser Syed** (“we”, “our”, or “us”) collects, uses, and protects information when you interact with the Service.  
-Questions?  Email **muntaser@ieee.org**.
+Questions?  Email **EMAIL HERE**.
 
 ---
 
@@ -55,7 +55,7 @@ We **do not** collect personal contact data, payment information, or precise loc
 ## 6. Your Choices
 
 * Stop using the Service to end data collection.  
-* Request log deletion by emailing **muntaser@ieee.org** with your session timestamp.
+* Request log deletion by emailing **EMAIL HERE** with your session timestamp.
 
 ---
 
