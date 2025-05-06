@@ -2,7 +2,7 @@
 _Last updated: May 05, 2025_
 
 Thank you for using **CiteRight** (“the Service”).  This privacy policy explains how we, **Muntaser Syed** (“we”, “our”, “us”), collect, use, and protect information when you interact with the Service.  
-If you have any questions, contact us at **muntaser@ieee.org**.
+If you have any questions, contact us at **EMAIL HERE**.
 
 ---
 
@@ -55,7 +55,7 @@ If you have any questions, contact us at **muntaser@ieee.org**.
 ## 6. Your Choices
 
 * Simply stop using the Service to cease data collection.  
-* For log deletion requests, email **muntaser@ieee.org** with your session ID.
+* For log deletion requests, email **EMAIL HERE** with your session ID.
 
 ---
 
