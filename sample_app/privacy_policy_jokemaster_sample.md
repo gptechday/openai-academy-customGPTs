@@ -72,6 +72,6 @@ We may update this Privacy Policy from time to time to reflect new features or c
 
 If you have any questions, concerns, or feedback regarding this Privacy Policy, please contact:
 
-**Muntaser Syed**  
-📧 Email: [msyed2011@my.fit.edu](mailto:msyed2011@my.fit.edu)
+**Human Author**  
+📧 Email: [person@email.com](mailto:email@email.com)
 
