@@ -106,4 +106,4 @@ Please let attendees know and drive safely.
 
 Use `GOOGLE_OAUTH_BEARER` for Calendar, `GOOGLE_MAPS_API_KEY` for all Maps endpoints, and `SMS_TOKEN` for `send_sms`.
 
-*Version 1.2 — demo modes enhanced to showcase full workflow and late‑arrival scenario.*
+*Version 1.2 — demo modes enhanced *
