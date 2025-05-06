@@ -1,0 +1,94 @@
+
+openapi: 3.1.0
+info:
+  title: Pinecone Query API for Tax Savvy
+  version: 1.0.0
+servers:
+  - url: https://pubs-gkncq2s.svc.aped-4627-b74a.pinecone.io
+paths:
+  /query:
+    post:
+      operationId: semantic_search
+      summary: Semantic vector search over IRS publication chunks.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Query results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+  /vectors/fetch:
+    post:
+      operationId: fetch_chunks
+      summary: Fetch raw chunk text by vector IDs.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchRequest'
+      responses:
+        '200':
+          description: Fetched vectors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchResponse'
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      in: header
+      name: Api-Key
+  schemas:
+    SearchRequest:
+      type: object
+      properties:
+        vector:
+          type: array
+          items: { type: number }
+        topK:
+          type: integer
+          default: 8
+        filter:
+          type: object
+      required: [vector, topK]
+    SearchResponse:
+      type: object
+      properties:
+        matches:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              score: { type: number }
+              metadata: { type: object }
+    FetchRequest:
+      type: object
+      properties:
+        ids:
+          type: array
+          items: { type: string }
+      required: [ids]
+    FetchResponse:
+      type: object
+      properties:
+        vectors:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              id: { type: string }
+              values:
+                type: array
+                items: { type: number }
+              metadata: { type: object }
+security:
+  - api_key: []
