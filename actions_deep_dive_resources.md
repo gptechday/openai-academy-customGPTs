@@ -1,7 +1,7 @@
 
 # Actions Deep Dive — Resource Pack
 
-A handy companion for the **“Actions Deep Dive”** slide. Copy‑ready links, code snippets, and a mini QA checklist — all Markdown‑safe for GitHub rendering.
+A handy companion for the **“Actions Deep Dive”** slide. Copy‑ready links, code snippets, and a mini QA checklist.
 
 ---
 
