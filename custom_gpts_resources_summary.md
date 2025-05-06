@@ -1,5 +1,5 @@
 
-# Custom GPTs — Resource Pack for Remaining Slides
+# Custom GPTs — Resource Pack for workshop
 *(curated links, code snippets & quick‑reference tables)*  
 
 ---
