@@ -1,6 +1,6 @@
 
-# Expanded Hostile‑Prompt Catalogue with Remedies  
-*Addendum for “Custom GPTs” workshop – May 2025*  
+# Hostile Prompt Examples with Remedies  
+*Addendum for “Custom GPTs” workshop – Muntaser Syed, May 2025*  
 
 The table below lists **six hostile‑prompt families**, provides **ten synthetic red‑team examples for each**, and pairs them with **concrete mitigation strategies** you can bake into a Custom GPT deployment.  
 
