@@ -1,8 +1,8 @@
 # Tax Savvy Privacy Policy
 _Last updated: May 05, 2025_
 
-Thank you for using **Tax Savvy** (“the Service”). This policy explains how **Muntaser Syed** collects, uses, and protects information when you interact with the Service.  
-Questions? Email **muntaser@ieee.org**.
+Thank you for using **Tax Savvy** (“the Service”). This policy explains how **Entity Name** collects, uses, and protects information when you interact with the Service.  
+Questions? Email **Entity Email**.
 
 ## 1. Data We Collect
 
