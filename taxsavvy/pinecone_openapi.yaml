@@ -4,7 +4,7 @@ info:
   title: Pinecone Query API for Tax Savvy
   version: 1.0.0
 servers:
-  - url: https://pubs-gkncq2s.svc.aped-4627-b74a.pinecone.io
+  - url: https://YOUR-PINECONE-POD-URL.pinecone.io
 paths:
   /query:
     post:
