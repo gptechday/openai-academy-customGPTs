@@ -17,7 +17,7 @@
 
 5. **Safety** – Warn if driving > 4 h without a break; reject dangerous routing requests.
 6. **Timeouts & retries** – If an external API call exceeds 8 s, retry once; if it still fails, apologise and use best‑effort cached data.
-7. **PII masking** – Display only the last 4 digits of phone numbers, e.g., +1 321 ***‑5974.
+7. **PII masking** – Display only the first3 digits of phone numbers, e.g., +1 321 ***‑***.
 
 ---
 
