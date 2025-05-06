@@ -35,7 +35,7 @@ We **do not** collect SSNs or tax return documents.
 - 2‑factor admin access.
 
 ## 6. Choices
-Email **muntaser@ieee.org** to request log deletion.
+Email **EMAIL HERE** to request log deletion.
 
 _By using Tax Savvy you agree to this policy._  
 © 2025 Muntaser Syed
